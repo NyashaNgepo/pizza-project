@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html>
+<title>KB's Pizzeria</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="pizzaproject.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Explora&family=Pompiere&family=Sofia&display=swap">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+<style>
+    body,
+    html {
+        height: 100%
+    }
+    
+    body,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        font-family: 'Explora', cursive;
+        font-family: 'Pompiere', cursive;
+        font-family: 'Sofia', cursive;
+    }
+    
+    .menu {
+        display: none
+    }
+    /* .bgimg {
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-image: url("https://pickvisa.com/storage/public/articles/italiano-pizza.jpg");
+        min-height: 90%; */
+    /* } */
+</style>
+<div id="demo" class="carousel slide" data-bs-ride="carousel">
+
+    <div class="carousel-indicators">
+        <button type="button" data-bs-target="#demo" data-bs-slide-to="0" class="active"></button>
+        <button type="button" data-bs-target="#demo" data-bs-slide-to="1"></button>
+        <button type="button" data-bs-target="#demo" data-bs-slide-to="2"></button>
+    </div>
+
+    <div class="pizza-content" style="max-width:1350px; min-height:90%;position:relative">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img class="mySlides pizza-animate-opacity" src="https://pickvisa.com/storage/public/articles/italiano-pizza.jpg" style="width:100%; background-size: cover;min-height: 600px;">
+            </div>
+            <div class="carousel-item">
+                <img class="mySlides pizza-animate-opacity" src="https://townsquare.media/site/696/files/2018/06/RS6755_153784617.jpg" style="width:100%;background-size: cover;height: 600px;">
+            </div>
+            <div class="carousel-item">
+                <img class="mySlides pizza-animate-opacity" src="https://images.squarespace-cdn.com/content/v1/5d9605420c5b607d9c9056de/1570284009275-VB4VFQUHDK7QQOEN2FI5/JRF_1638.jpg?format=2500w" style="width:100%;background-size: cover;height: 600px;">
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#demo" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon"></span>
+                  </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#demo" data-bs-slide="next">
+                    <span class="carousel-control-next-icon"></span>
+                  </button>
+        </div>
+        <!-- <a class="pizza-button pizza-hover-white" style="position:absolute;top:45%;left:0;" onclick="plusDivs(-1)">❮</a>
+            <a class="pizza-button pizza-hover-white" style="position:absolute;top:45%;right:0;" onclick="plusDivs(+1)">❯</a> -->
+        <div class="pizza-display-middle pizza-center">
+            <span class="pizza-text-white pizza-hide-small" style="font-size:100px">thin<br>CRUST PIZZA</span>
+            <span class="pizza-text-white pizza-hide-large pizza-hide-medium" style="font-size:60px"><b>thin<br>CRUST PIZZA</b></span>
+            <p><a href="#menu" class="pizza-button pizza-xxlarge pizza-yellow">Let me see the menu</a></p>
+
+        </div>
+    </div>
+</div>
+
+
+<body>
+
+    <!-- Navbar (sit on top) -->
+    <div class="pizza-top pizza-hide-small">
+        <div class="pizza-bar pizza-grey pizza-xlarge pizza-dark-grey pizza-opacity pizza-hover-opacity-off" id="myNavbar">
+            <a href="#" class="pizza-bar-item pizza-button">HOME</a>
+            <a href="#menu" class="pizza-bar-item pizza-button">MENU</a>
+            <a href="#about" class="pizza-bar-item pizza-button">ABOUT</a>
+            <a href="#myMap" class="pizza-bar-item pizza-button">CONTACT</a>
+        </div>
+    </div>
+
+    <!-- Header with image -->
+    <header class="bgimg pizza-display-container" id="home">
+        <div class="pizza-display-bottomleft pizza-padding">
+            <span class="pizza-tag pizza-xlarge">Open from 7:30am to 10pm</span>
+        </div>
+        <!-- <div class="pizza-display-middle pizza-center">
+            <span class="pizza-text-white pizza-hide-small" style="font-size:100px">thin<br>CRUST PIZZA</span>
+            <span class="pizza-text-white pizza-hide-large pizza-hide-medium" style="font-size:60px"><b>thin<br>CRUST PIZZA</b></span>
+            <p><a href="#menu" class="pizza-button pizza-xxlarge pizza-yellow">Let me see the menu</a></p>
+        </div> -->
+    </header>
+
+    <!-- Menu Container -->
+    <div class="pizza-container pizza-black pizza-padding-64 pizza-xxlarge" style="background-color: grey !important;" id="menu">
+        <div class="pizza-content">
+
+            <h1 class="pizza-center pizza-jumbo" style="margin-bottom:64px">THE MENU</h1>
+            <div class="pizza-row pizza-center pizza-border pizza-border-dark-grey">
+                <a href="javascript:void(0)" onclick="openMenu(event, 'Pizza');" id="myLink">
+                    <div class="pizza-col s4 tablink pizza-padding-large pizza-hover-yellow">Pizza</div>
+                </a>
+                <a href="javascript:void(0)" onclick="openMenu(event, 'Pasta');">
+                    <div class="pizza-col s4 tablink pizza-padding-large pizza-hover-yellow">Salads</div>
+                </a>
+                <a href="javascript:void(0)" onclick="openMenu(event, 'Starter');">
+                    <div class="pizza-col s4 tablink pizza-padding-large pizza-hover-yellow">Starter</div>
+                </a>
+            </div>
+
+            <div id="Pizza" class="pizza-container menu pizza-padding-32 pizza-white">
+                <h1><b>Margherita</b> <span class="pizza-right pizza-tag pizza-dark-grey pizza-round">R200</span></h1>
+                <p class="pizza-text-grey">Fresh tomatoes, fresh mozzarella, fresh basil</p>
+                <hr>
+
+                <h1><b>Formaggio</b> <span class="pizza-right pizza-tag pizza-dark-grey pizza-round">R250</span></h1>
+                <p class="pizza-text-grey">Four cheeses (mozzarella, parmesan, pecorino, jarlsberg)</p>
+                <hr>
+
+                <h1><b>Chicken</b> <span class="pizza-right pizza-tag pizza-dark-grey pizza-round">R300</span></h1>
+                <p class="pizza-text-grey">Fresh tomatoes, mozzarella, chicken, onions</p>
+                <hr>
+
+                <h1><b>Pineapple'o'clock</b> <span class="pizza-right pizza-tag pizza-dark-grey pizza-round">R285</span></h1>
+                <p class="pizza-text-grey">Fresh tomatoes, mozzarella, fresh pineapple, bacon, fresh basil</p>
+                <hr>
+
+                <h1><b>Meat Town</b> <span class="pizza-tag pizza-yellow pizza-round">Hot!</span><span class="pizza-right pizza-tag pizza-dark-grey pizza-round">R280</span></h1>
+                <p class="pizza-text-grey">Fresh tomatoes, mozzarella, hot pepporoni, hot sausage, beef, chicken</p>
+                <hr>
+
+                <h1><b>Parma</b> <span class="pizza-tag pizza-grey pizza-round">New</span><span class="pizza-right pizza-tag pizza-dark-grey pizza-round">R300</span></h1>
+                <p class="pizza-text-grey">Fresh tomatoes, mozzarella, parma, bacon, fresh arugula</p>
+            </div>
+
+            <div id="Pasta" class="pizza-container menu pizza-padding-32 pizza-white">
+                <h1><b>Lasagna</b> <span class="pizza-tag pizza-grey pizza-round">Popular</span> <span class="pizza-right pizza-tag pizza-dark-grey pizza-round">R250</span></h1>
+                <p class="pizza-text-grey">Special sauce, mozzarella, parmesan, ground beef</p>
+                <hr>
+
+                <h1><b>Ravioli</b> <span class="pizza-right pizza-tag pizza-dark-grey pizza-round">R220</span></h1>
+                <p class="pizza-text-grey">Ravioli filled with cheese</p>
+                <hr>
+
+                <h1><b>Spaghetti Classica</b> <span class="pizza-right pizza-tag pizza-dark-grey pizza-round">R120</span></h1>
+                <p class="pizza-text-grey">Fresh tomatoes, onions, ground beef</p>
+                <hr>
+
+                <h1><b>Seafood pasta</b> <span class="pizza-right pizza-tag pizza-dark-grey pizza-round">R350</span></h1>
+                <p class="pizza-text-grey">Salmon, shrimp, lobster, garlic</p>
+            </div>
+
+
+            <div id="Starter" class="pizza-container menu pizza-padding-32 pizza-white">
+                <h1><b>Today's Soup</b> <span class="pizza-tag pizza-grey pizza-round">Seasonal</span><span class="pizza-right pizza-tag pizza-dark-grey pizza-round">R90</span></h1>
+                <p class="pizza-text-grey">Ask the waiter</p>
+                <hr>
+
+                <h1><b>Bruschetta</b> <span class="pizza-right pizza-tag pizza-dark-grey pizza-round">120</span></h1>
+                <p class="pizza-text-grey">Bread with pesto, tomatoes, onion, garlic</p>
+                <hr>
+
+                <h1><b>Garlic bread</b> <span class="pizza-right pizza-tag pizza-dark-grey pizza-round">R130</span></h1>
+                <p class="pizza-text-grey">Grilled ciabatta, garlic butter, onions</p>
+                <hr>
+
+                <h1><b>Tomozzarella</b> <span class="pizza-right pizza-tag pizza-dark-grey pizza-round">R150</span></h1>
+                <p class="pizza-text-grey">Tomatoes and mozzarella</p>
+            </div><br>
+
+        </div>
+    </div>
+
+    <!-- About Container -->
+    <div class="pizza-container pizza-padding-64 pizza-red pizza-xlarge" id="about">
+        <div class="pizza-content">
+            <h1 class="pizza-center pizza-jumbo" style="margin-bottom:64px">About</h1>
+            <p>The pizzeria was found in 2000 january by Mr Kb's, he started by selling door to door but as time goes on the business started to expand and he became famous.</p>
+            <p><strong>The Chef?</strong> Mr. Kb's<img src="https://fm.cnbc.com/applications/cnbc.com/resources/img/editorial/2013/04/29/100685222-155134891.530x298.jpg?v=1367253673" style="width:150px" class="pizza-circle pizza-right" alt="Chef"></p>
+            <p>We are proud of our environment.</p>
+            <img src="http://retaildesignblog.net/wp-content/uploads/2014/11/Nicks-Pizza-by-Loko-Design-Rio-Claro-Brazil.jpg" style="width:100%" class="pizza-margin-top pizza-margin-bottom" alt="Restaurant">
+            <h1><b>Opening Hours</b></h1>
+
+            <div class="pizza-row">
+                <div class="pizza-col s6">
+                    <p>Monday 7:30-10pm</p>
+                    <p>Tuesday 7:30-10pm</p>
+                    <p>Wednesday 7:30 - 10pm</p>
+                    <p>Thursday 7:30- 10pm</p>
+                    <p>Friday 7:30-10pm</p>
+                </div>
+                <div class="pizza-col s6">
+                    <p>Saturday 10:00 - 23:00</p>
+                    <p>Sunday Closed</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Image of location/map -->
+    <!-- <img src="/pizzaimages/map.jpg" class="pizza-image pizza-greyscale" style="width:100%;" id="myMap"> -->
+    <div class="mapouter">
+        <div class="gmap_canvas"><iframe width="100%" height="500" id="gmap_canvas" src="https://maps.google.com/maps?q=8%20uys%20Krige,%20Loevenstein&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
+            <a href="https://123movies-to.org">123movies</a><br>
+            <style>
+                .mapouter {
+                    position: relative;
+                    text-align: right;
+                    height: 500px;
+                    width: 100%;
+                }
+            </style><a href="https://www.embedgooglemap.net">create custom map free</a>
+            <style>
+                .gmap_canvas {
+                    overflow: hidden;
+                    background: none!important;
+                    height: 500px;
+                    width: 100%;
+                }
+            </style>
+        </div>
+    </div>
+
+    <!-- Contact -->
+    <div class="pizza-container pizza-padding-64 pizza-blue-grey pizza-grayscale-min pizza-xlarge">
+        <div class="pizza-content">
+            <h1 class="pizza-center pizza-jumbo" style="margin-bottom:64px">Contact</h1>
+            <p>Find us at some address above or contacting us on 0730 047 502</p>
+            <p class="pizza-xxlarge"><strong>Reserve</strong> a table, ask for today's special or just send us a message:</p>
+            <form>
+                <p><input class="pizza-input pizza-padding-16 pizza-border" type="text" id="name" placeholder="Name" required name="Name"></p>
+                <p><input class="pizza-input pizza-padding-16 pizza-border" type="number" id="number-people" placeholder="How many people" required name="People"></p>
+                <p><input class="pizza-input pizza-padding-16 pizza-border" type="datetime-local" id="date" placeholder="Date and time" required name="date" value="2020-11-16T20:00"></p>
+                <p><input class="pizza-input pizza-padding-16 pizza-border" type="text" id="message" placeholder="Message \ Special requirements" required name="Message"></p>
+                <p><button onclick="sendEmail()" class="pizza-button pizza-light-grey pizza-block" type="button">SEND MESSAGE</button></p>
+            </form>
+        </div>
+    </div>
+    <!-- Footer -->
+    <footer class="pizza-center pizza-dark-grey pizza-padding-48 pizza-xxlarge">
+        <p>copyright &copy Done by Thandiwe, All rights reserved.</p>
+    </footer>
+
+    <script type="text/javascript" src="pizzaproject.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
+
+</body>
+
+</html>
